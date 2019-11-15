@@ -1,0 +1,11 @@
+name: "facebook"
+
+platforms:
+    arm64-ios:
+        context:
+            frameworks: ["Accelerate"]
+            linkFlags:  ["-ObjC"]
+    armv7-ios:
+        context:
+            frameworks: ["Accelerate"]
+            linkFlags:  ["-ObjC"]
