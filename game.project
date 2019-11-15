@@ -40,7 +40,7 @@ app_icon_144x144 = /main/images/icon/144.png
 app_icon_167x167 = /main/images/icon/167.png
 
 [library]
-include_dirs = amplitude
+include_dirs = facebook
 
 [facebook]
 app_id = 12345
