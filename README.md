@@ -1,40 +1,54 @@
-# Amplitude Extension for Defold
+# Facebook Extension for Defold
 
-This extension wraps Amplitude SDK for iOS (4.8.2). On other platforms this extension provides stub functions.
+This extension wraps Facebook SDK for iOS (5.11.0). On other platforms this extension provides stub functions.
+
+## Setup
+
+Add Facebook App Id and Display Name to the `game.project` file.
+
+```
+[facebook]
+app_id = 12345
+display_name = Defold Facebook
+```
 
 # API reference
 
-## amplitude.init(params)
+## facebook.init(params)
 
 Call this function before invoking any other functions.
 
 ### `params` reference
 
-- `api_key`, string, required. API key.
+- `auto_log_app_events`, boolean, optional. Default is `false`.
+- `advertiser_id_collection`, boolean, optional. Default is `false`.
 
 ### Syntax
 
 ```language-lua
-amplitude.init{
-	api_key = 'YOUR KEY HERE'
+facebook.init{
+	auto_log_app_events = true,
+	advertiser_id_collection = true
 }
 ```
 ___
-## amplitude.track_event(params)
+## facebook.track_event(params)
 
 Track an event via the SDK.
 
 ### `params` reference
 
 - `name`, string, required. Event name.
-- `event_properties`, table, optional. A key-value set of extra event properties. Keys and values must be strings.
+- `value`, number, optional. Value.
+- `params`, table, optional. A key-value set of extra event parameters.
 
 ### Syntax
 
 ```language-lua
-amplitude.track_event{
+facebook.track_event{
 	name = 'event_name',
-	event_properties = {
+	value = 1,
+	params = {
 		key1 = 'value1',
 		key2 = 'value2'
 	}
